@@ -7,10 +7,14 @@
     See: http://necolas.github.com/normalize.css/
   -->
   <link rel="stylesheet" href="/css/normalize.css">
-
+  <script type="text/javascript" src="/javascript/application.js"></script>
   <title></title>
 </head>
 <body>
+  <% if session[:message] %>
+    <p><%= session[:message] %></p>
+    <% session.delete(:message) %>
+  <% end %>
   <%= yield %>
 </body>
 </html>
